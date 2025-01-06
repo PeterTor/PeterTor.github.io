@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My GitHub Page</title>
+  <style>
+    /* Minimal styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header, footer {
+      background-color: #fafafa;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #333;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My GitHub Page</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        TEst
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>
+        TEst
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Feel free to reach out if you have questions or comments.
+        You can link to your email or social media profiles here.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> My Name
+    </p>
+  </footer>
+
+  <script>
+    // Optional script to update the copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
