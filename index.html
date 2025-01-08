@@ -1,85 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
-  <style>
-    /* Minimal styling */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header, footer {
-      background-color: #fafafa;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 0.5rem;
-      text-decoration: none;
-      color: #333;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    h1, h2 {
-      color: #333;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Torben Peters</title>
+    <meta name="description" content="A Short Review" />
+    
+    <meta property="og:title" content="Torben Peters" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.PeterTor.github.io" />
+    <meta property="og:description" content="My Github Page" />
+    <meta property="og:image" content="assets/images/content.png" />
+    
+    <link rel="icon" href="assets/images/favicon.ico" />
+    
+    <link rel="stylesheet" href="assets/css/styles.css?v=0.2" />       
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" />
+    <link rel="stylesheet" href="assets/css/magnify.css" />
+
+
+    <script src="https://kit.fontawesome.com/f49eb91832.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script> 
+    
 </head>
+
 <body>
-  <header>
-    <h1>My GitHub Page</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Torben Peters: A Short Review</h1>
 
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        TEst
-      </p>
+        <div id="authors">
+
+            <div>
+                <img src="assets/images/torben.png" alt="Torben" />
+                <br />
+                Torben Peters <sup>1,*</sup>
+            </div>
+
+        </div>     
+        <p style="text-align: center;text-align-last: center;">
+            <sup>1</sup>  ETH Z&uuml;rich<sup><br />
+                <sup>*</sup> Corresponding author: <a href="mailto:tpeters@ethz.ch">tpeters@ethz.ch</a>
+
+            <br />
+            <br />
+        </p>
+        <div>
+            <!-- Google Scholar -->
+            <a class="button" target="_blank" href="https://scholar.google.com/citations?user=F2C3I9EAAAAJ&hl=de">
+                <i class="fa-brands fa-google-scholar fa-bounce-hover fa-lg"></i>&nbsp; Papers
+            </a>
+            <!-- Supplementary PDF -->
+            <a class="button" target="_blank" href="assets/paper/supp.pdf">
+                <i class="far fa-file-pdf fa-bounce-hover fa-lg"></i>&nbsp; Supplementary
+            </a>
+   
+            <!-- GitHub -->
+            <a class="button" target="_blank" href="https://github.com/PeterTor">
+                <i class="fa-brands fa-github fa-bounce-hover fa-lg"></i>&nbsp; Code
+            </a>
+            <!-- LinkedIn -->
+            <a class="button" target="_blank" href="https://www.linkedin.com/in/torben-peters-333b68182/">
+                <i class="fa-brands fa-linkedin fa-bounce-hover fa-lg"></i>&nbsp; LinkedIn
+            </a>
+                     <!-- Twitter/X -->
+                     <a class="button" target="_blank" href="https://twitter.com/PeterTor_">
+                        <!-- If using the new "X" icon, adjust to fa-x-twitter if supported by your version of Font Awesome -->
+                        <i class="fa-brands fa-twitter fa-bounce-hover fa-lg"></i>&nbsp; Twitter
+                    </a>
+        </div>
+    </header>
+
+
+
+    <section id="intro">
+        <div>
+            <video controls autoplay muted loop playsinline>
+                <source src="assets/videos/HighResTrailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+        </div>
+        <div class="vertical-aligned">
+            <h1>Abstract</h1>
+        <p style="text-align: justify;">I’m a Postdoctoral Researcher at ETH Zürich, focusing on advanced 3D modeling. I also work with remote sensing for humanitarian and environmental applications. My background spans computer science, mobile robotics, and software engineering across tech startups and insurance. I’m passionate about bridging research and real-world impact—feel free to explore my work for projects in 3D modeling, machine learning, and beyond! </p>
+        </div>    
     </section>
+    
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>
-        TEst
-      </p>
-    </section>
+    <section id="abstract" class="wrapper" style="margin-top: 2rem;">
+        <h1>Selected Methods</h1>
+        <div id="methods-container"></div>
+      </section>
+    
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Feel free to reach out if you have questions or comments.
-        You can link to your email or social media profiles here.
-      </p>
-    </section>
-  </main>
-
-  <footer>
+    <section id="references" class="wrapper" style="margin-top: 2rem;">
+    <h1>References</h1>
     <p>
-      &copy; <span id="year"></span> My Name
+    [1] Gao, Jun, et al. "Get3d: A generative model of high quality 3d textured shapes learned from images." Advances In Neural Information Processing Systems 35 (2022): 31841-31854.
+    <br />
+    [2] Liu, Zhen, et al. "MeshDiffusion: Score-based Generative 3D Mesh Modeling." The Eleventh International Conference on Learning Representations. 2022.
     </p>
-  </footer>
+    </section>
+    
 
-  <script>
-    // Optional script to update the copyright year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+</code></pre>               
+    </section>
+    
+    <footer>
+        <p>Copyright &copy; 2025 PeterTor.github.io. All rights reserved. - I stole shamelessley some html code from Nikolai :) </p>
+    </footer>
+    <script src="methods.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects/dist/model-viewer-effects.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/2.3.3/js/jquery.magnify.min.js" integrity="sha512-YKxHqn7D0M5knQJO2xKHZpCfZ+/Ta7qpEHgADN+AkY2U2Y4JJtlCEHzKWV5ZE87vZR3ipdzNJ4U/sfjIaoHMfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/2.3.3/js/jquery.magnify-mobile.min.js" integrity="sha512-c3hGxeqPC+hyYCH6xddUy6sg5lgmXomxpN5fkhUxKPOM7OD/+M+Rj1rj02q4MOkn+PUBRGPZVNTMMrREyZS0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@^0.159.0/build/three.module.min.js"
+      }
+    }
+    </script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+            $('#objs').slick({
+                  draggable: false,
+                  autoplay: true,
+                  dots: true,
+                  infinite: true,
+                  speed: 300,
+                  slidesToShow: 5,
+                  slidesToScroll: 1,
+                  variableWidth: true
+            });
+            $('.zoom').magnify();
+        });
+    
+    </script>
+
 </body>
 </html>

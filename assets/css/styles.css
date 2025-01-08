@@ -1,0 +1,125 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+video {
+    max-width: 400px;
+    min-width: 100px;
+}
+
+p {
+    text-align: justify; 
+    text-align-last: left;
+}
+
+
+header {     
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 1.2em;    
+}
+header h1 {
+    font-size: 2.5em !important;   
+    margin-bottom: 2rem;
+}
+
+
+#authors {
+    display: flex;
+    justify-content:center;
+}
+#authors div {
+    width: 200px;
+}
+#authors img {
+    width: 64px;
+}
+
+header a.button {
+    background-color: #3A3A3A; /* Green #04AA6D */
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;       
+    margin: 5px; 
+    font-size: 0.8em;
+}
+header a.button:hover {
+    background-color: #1A1A1A;
+}
+.button:hover .fa-bounce-hover {
+  -webkit-animation: fa-bounce 0.7s linear;
+  -moz-animation: fa-bounce 0.7s linear;
+  -o-animation: fa-bounce 0.7s linear;
+  animation: fa-bounce 0.7s linear;
+}   
+
+header a.button[disabled], header a.button[disabled]:hover .fa-bounce-hover {
+    opacity: 0.5;
+    animation: none !important;
+    background-color: #3A3A3A;
+}     
+
+section#videos {
+    display: flex;
+    justify-content:center;
+    margin-top: 2rem;
+}
+
+section#intro {       
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;    
+}
+section#intro div {
+    max-width: 600px;
+    min-width: 320px;
+    padding: 20px;
+    font-size: 1.2em;
+}
+section#intro div.vertical-aligned {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section#method img {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+
+section#additional img {
+    padding: 0px;
+}
+
+
+section.wrapper {
+    margin: auto;
+    max-width: 960px;     
+    text-align: left;
+}
+
+model-viewer {
+    width: 300px;
+    height: 300px;
+} 
+
+footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 960px) {
+    
+}
+
