@@ -34,6 +34,7 @@
       },
       {
         side: 'right',
+        id: 'paper-gen',
         videoSrc: 'assets/videos/HighResTrailer.mp4',
         title: 'TetraDiffusion: Tetrahedral Diffusion Models for 3D Shape Generation',
         titleLink: 'https://tetradiffusion.github.io/',
@@ -57,6 +58,7 @@
       
       {
         side: 'left',
+        id: 'paper-env',
         imageSrc: 'assets/images/agbd.png',
         title: '🌲 AGBD: A Global-scale Biomass Dataset 🌳',
         titleLink: 'https://huggingface.co/datasets/prs-eth/AGBD',
@@ -86,6 +88,7 @@
       
       {
         side: 'right',
+        id: 'paper-hum',
         imageSrc: 'https://github.com/prs-eth/ukraine-damage-mapping-tool/raw/main/doc/ukraine_damage_adm3_agg.png',
         title: 'An Open-Source Tool for Mapping War Destruction at Scale in Ukraine using Sentinel-1 Time Series',
         titleLink: 'https://github.com/prs-eth/ukraine-damage-mapping-tool',
@@ -164,6 +167,7 @@
       
       {
         side: 'left',
+        id: 'paper-3d',
         imageSrc: 'assets/images/MVTeaser.png',
         title: 'Semantic segmentation of mobile mapping point clouds via multi-view label transfer',
         titleLink: 'https://www.sciencedirect.com/science/article/pii/S0924271623001351',
@@ -270,6 +274,7 @@
       },
       {
         side: 'right',
+        id: 'paper-rob',
         videoSrc: 'assets/videos/robot.mp4',
         title: 'Deep Reinforcment Learning - a robot learns to walk ',
         titleLink: 'https://github.com/PeterTor/DDPG-Gait',
@@ -325,7 +330,7 @@ function createMethodHTML(method) {
     ? `<p><em>* indicates shared first authorship</em></p>`
     : '';
 
-
+  // Build the icons list (if any)
   const iconsHTML = Array.isArray(method.icons) && method.icons.length > 0
     ? `
       <div style="text-align: center; margin: 0.5rem 0;">
@@ -392,10 +397,14 @@ function createMethodHTML(method) {
     </div>
   `;
 
+  // Build the outer container, optionally adding an id
+  const methodRowId = method.id ? `id="${method.id}"` : '';
+
   // If side is 'left' => media first, text second
   if (method.side === 'left') {
     return `
-      <div class="method-row"
+      <div ${methodRowId}
+           class="method-row"
            style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; height: 300px;">
         ${mediaColumn}
         ${textColumn}
@@ -404,7 +413,8 @@ function createMethodHTML(method) {
   } else {
     // side === 'right' => text first, media second
     return `
-      <div class="method-row"
+      <div ${methodRowId}
+           class="method-row"
            style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; height: 300px;">
         ${textColumn}
         ${mediaColumn}
@@ -425,3 +435,4 @@ document.addEventListener('DOMContentLoaded', function listener() {
     container.insertAdjacentHTML('beforeend', createMethodHTML(method));
   });
 });
+

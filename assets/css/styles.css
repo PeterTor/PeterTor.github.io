@@ -91,6 +91,24 @@ header a.button:hover {
   -o-animation: fa-bounce 0.7s linear;
   animation: fa-bounce 0.7s linear;
 }   
+.highlight-link {
+  color: #333;               /* Dark gray text */
+  font-weight: 600;          /* Semi-bold text */
+  text-decoration: none;     /* Remove default underline */
+  border-bottom: 1px dotted #999; /* Subtle dotted underline */
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.highlight-link:hover {
+  color: #000;               /* Darken text on hover */
+  border-bottom-color: #666; /* Darken dotted underline on hover */
+}
+
+/* Smooth scrolling (optional) */
+html {
+  scroll-behavior: smooth;
+}
+
 
 header a.button[disabled], header a.button[disabled]:hover .fa-bounce-hover {
     opacity: 0.5;
