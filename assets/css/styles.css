@@ -93,7 +93,7 @@ header a.button:hover {
 }   
 .highlight-link {
   color: #333;               /* Dark gray text */
-  font-weight: 600;          /* Semi-bold text */
+  font-weight: 700;          /* Semi-bold text */
   text-decoration: none;     /* Remove default underline */
   border-bottom: 1px dotted #999; /* Subtle dotted underline */
   transition: color 0.2s, border-color 0.2s;
