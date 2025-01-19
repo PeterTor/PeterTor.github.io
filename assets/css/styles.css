@@ -99,9 +99,10 @@ header a.button:hover {
   transition: color 0.2s, border-color 0.2s;
 }
 
-.highlight-link:hover {
-  color: #000;               /* Darken text on hover */
-  border-bottom-color: #666; /* Darken dotted underline on hover */
+/* More specific selector */
+a.highlight-link:hover {
+  color: #000;                      /* Text becomes black on hover */
+  border-bottom: 2px solid #000;    /* Underline becomes thicker and solid black */
 }
 
 /* Smooth scrolling (optional) */
