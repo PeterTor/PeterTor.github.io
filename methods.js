@@ -83,7 +83,7 @@
         text: "Code"
       }
     ],
-        publishedInfo: 'Preprint, under review'
+        publishedInfo: 'Conference Paper, ISPRS Annals of the Photogrammetry, 2025'
       },
       
       {
