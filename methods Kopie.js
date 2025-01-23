@@ -277,7 +277,7 @@
         id: 'paper-rob',
         videoSrc: 'assets/videos/robot.mp4',
         imageSrc: "https://github.com/PeterTor/DDPG-Gait/raw/master/robot/real_small.jpg",
-        title: 'Deep Reinforcement Learning - a robot learns to walk',
+        title: 'DDPG Gait - a robot learns to walk ',
         titleLink: 'https://github.com/PeterTor/DDPG-Gait',
         authors: [
           { name: 'Torben Peters' }
@@ -295,8 +295,6 @@
     
 
   ];
-
-
 
 
   function createMethodHTML(method) {
@@ -359,82 +357,60 @@
     `
         : '';
 
-    // Media column (video or image)
-    let mediaColumn = '';
+    // Decide how to handle the media (video / image)
+    // 1) If both videoSrc and imageSrc are present, display them side-by-side, centered, below the title.
+    // 2) Otherwise, follow the original side logic.
+    let mediaSection = '';
 
     if (method.videoSrc && method.imageSrc) {
-      // Both video and image -> use smaller gap for stacking
-      mediaColumn = `
-    <div
-      style="
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        /* Use a very small gap to bring them closer */
-        gap: 0.2rem;
-        
-      "
-    >
-      <video
-        width="240"
-        height="240"
-        style="object-fit: contain; margin: -40px; padding: 0;"
-        autoplay
-        muted
-        loop
-        playsinline
-      >
-        <source src="${method.videoSrc}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <img
-        src="${method.imageSrc}"
-        alt="${method.title}"
-        style="
-          width: 240px;
-          height: 240px;
-          object-fit: contain;
-          margin: -40px;
-          padding: 0;
-        "
-      >
-    </div>
+      // Both video and image => side-by-side, centered, smaller size
+      mediaSection = `
+      <div class="method-media-both" 
+           style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 1rem 0;">
+        <video style="width: 300px; object-fit: contain;" autoplay muted loop playsinline controls>
+          <source src="${method.videoSrc}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="${method.imageSrc}" alt="${method.title}"
+             style="width: 250px; object-fit: contain;">
+      </div>
     `;
     } else if (method.videoSrc) {
-
-      mediaColumn = `
+      // Only video (center and smaller width)
+      mediaSection = `
       <div class="method-media"
-           style="flex: 1; min-width: 300px; height: 300px; display: flex; align-items: center; justify-content: center;">
-        <video width="300" height="300"
-               style="object-fit: contain;" autoplay muted loop playsinline>
+           style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <video style="width: 300px; object-fit: contain;" autoplay muted loop playsinline controls>
           <source src="${method.videoSrc}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
     `;
     } else if (method.imageSrc) {
-      mediaColumn = `
+      // Only image (center and smaller width)
+      mediaSection = `
       <div class="method-media"
-           style="flex: 1; min-width: 300px; height: 300px; display: flex; align-items: center; justify-content: center;">
+           style="flex: 1; display: flex; align-items: center; justify-content: center;">
         <img src="${method.imageSrc}" alt="${method.title}"
-             style="width: 100%; height: 100%; object-fit: contain;">
+             style="width: 300px; object-fit: contain;">
       </div>
     `;
     }
 
-    // Text column
-    const textColumn = `
-    <div class="method-description"
-         style="flex: 2; height: 300px; display: flex; flex-direction: column; justify-content: center;">
+    // Build the text section
+    const textSection = `
+    <div class="method-description" style="flex: 2;">
       <h2 style="margin-top: 0;">
         <a href="${method.titleLink}" target="_blank"
            style="text-decoration: none; color: black; font-weight: bold;">
            ${method.title}
         </a>
       </h2>
+      ${
+        (method.videoSrc && method.imageSrc)
+            ? mediaSection   // show side-by-side media below the title
+            : ''             // otherwise, handle single-media layout outside
+    }
       <p>${authorsHTML}</p>
       ${sharedAuthLine}
       ${iconsHTML}
@@ -442,27 +418,40 @@
     </div>
   `;
 
-    // Build the outer container, optionally adding an id
+    // The ID (if present) goes on the container, so it applies to both two-column and single-column variants
     const methodRowId = method.id ? `id="${method.id}"` : '';
 
-    // If side is 'left' => media first, text second
-    if (method.side === 'left') {
+    // If both media sources, we do a single-column container (since the media is already embedded in textSection).
+    if (method.videoSrc && method.imageSrc) {
+      return `
+      <div ${methodRowId} class="method-row" 
+           style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+        ${textSection}
+      </div>
+    `;
+    }
+
+    // Otherwise, for single media, use the original side-by-side approach
+    const side = (method.side === 'left') ? 'left' : 'right';
+
+    // If side === 'left' => media first, then text
+    // If side === 'right' => text first, then media
+    if (side === 'left') {
       return `
       <div ${methodRowId}
            class="method-row"
-           style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; height: 300px;">
-        ${mediaColumn}
-        ${textColumn}
+           style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; min-height: 300px;">
+        ${mediaSection}
+        ${textSection}
       </div>
     `;
     } else {
-      // side === 'right' => text first, media second
       return `
       <div ${methodRowId}
            class="method-row"
-           style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; height: 300px;">
-        ${textColumn}
-        ${mediaColumn}
+           style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; min-height: 300px;">
+        ${textSection}
+        ${mediaSection}
       </div>
     `;
     }
