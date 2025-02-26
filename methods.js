@@ -30,7 +30,7 @@
       }
     ],
 
-        publishedInfo: 'Preprint, under review'
+        publishedInfo: 'Conference on Computer Vision and Pattern Recognition (CVPR) 2025'
       },
       {
         side: 'right',
