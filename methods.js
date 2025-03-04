@@ -113,7 +113,7 @@
         authors: [
           { name: 'Olivier Dietrich' }, { name: 'Torben Peters' }, { name: 'Vivien Sainte Fare Garnot' }, { name: 'Valerie Sticher' }, { name: 'Thao Ton-That Whelan' }, { name: 'Konrad Schindler' }, { name: 'Jan Dirk Wegner' }
         ],
-        publishedInfo: 'Preprint, under review '
+        publishedInfo: 'Nature Communications Earth & Environment'
       },
 
       {
