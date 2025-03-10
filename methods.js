@@ -1,6 +1,32 @@
 
   const MY_NAME = 'Torben Peters'; // Bold this name
   const methods = [
+  
+  
+  {
+        side: 'right',
+        imageSrc: 'assets/images/thera.png',
+        title: '🔥Thera🔥: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields',
+        titleLink: 'https://rollingdepth.github.io',
+        authors: [
+          { name: 'Alexander Becker' }, { name: 'Rodrigo Daudt' }, { name: 'Dominik Narnhofer' },  { name: 'Torben Peters' }, { name: 'Nando Metzger' }, { name: 'Jan Dirk Wegner' }, { name: 'Konrad Schindler' }
+        ],
+           icons: [
+      {
+        href: "http://arxiv.org/",
+        iconClass: "ai ai-arxiv ai-lg fa-bounce-hover fa-lg",
+        text: "Paper"
+      },
+               
+      {
+        href: "https://therasr.github.io/",
+        iconClass: "fa-brands fa-github fa-bounce-hover fa-lg",
+        text: "Code"
+      }
+    ],
+
+        publishedInfo: 'Preprint, under review'
+      },
 
       
       {
