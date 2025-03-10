@@ -7,13 +7,13 @@
         side: 'right',
         imageSrc: 'assets/images/thera.png',
         title: '🔥Thera🔥: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields',
-        titleLink: 'https://rollingdepth.github.io',
+        titleLink: 'https://therasr.github.io/',
         authors: [
           { name: 'Alexander Becker' }, { name: 'Rodrigo Daudt' }, { name: 'Dominik Narnhofer' },  { name: 'Torben Peters' }, { name: 'Nando Metzger' }, { name: 'Jan Dirk Wegner' }, { name: 'Konrad Schindler' }
         ],
            icons: [
       {
-        href: "http://arxiv.org/",
+        href: "https://therasr.github.io/static/pdf/paper.pdf",
         iconClass: "ai ai-arxiv ai-lg fa-bounce-hover fa-lg",
         text: "Paper"
       },
