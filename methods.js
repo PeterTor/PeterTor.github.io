@@ -22,7 +22,11 @@
         href: "https://therasr.github.io/",
         iconClass: "fa-brands fa-github fa-bounce-hover fa-lg",
         text: "Code"
-      }
+      }, {
+      href: "https://huggingface.co/spaces/prs-eth/thera",
+      imageSrc: "assets/images/hf-logo.png",
+      text: "Try on Hugging Face"
+    }
     ],
 
         publishedInfo: 'Preprint, under review'
